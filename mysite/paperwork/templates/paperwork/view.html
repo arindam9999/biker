@@ -1,0 +1,75 @@
+{% extends 'paperwork/base.html' %}
+
+{% block content %}
+{%  load static  %}
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+    
+  
+    <div style="height: 113px;"></div>
+
+    <div class="unit-5 overlay" style="background-image: url('{% static 'images/hero_2.jpg' %}');">
+      <div class="container text-center">
+        <h2 class="mb-0">{{ text }}</h2>
+      </div>
+    </div>
+
+    
+    
+{% for post in post%}
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+       
+          <div class="col-md-12 col-lg-12 mb-5">
+          
+            
+          
+            <div class="p-5 bg-white text-center" >
+
+              <div class="mb-0 mb-md-5 mr-12">
+               <!--<div class="job-post-item-header d-flex align-items-center">-->
+                 <h1 class="mr-12 text-center h1 text-secondary"><u>  ID:-   {{post.registration_no}}   </u> </h1>
+
+               
+               <div ><h6>*Click on images below to download them.</h6></div>
+               
+              </div>
+              <div>
+                <h3><u>Rc</u></h3>
+                <p></p>
+                   <a href="{{post.rc.url}}" class="mb-12 d-block img-a img-thumbnail " download  ><img src="{{post.rc.url}}" alt="Image" class="img-fluid rounded"></a>
+                  <p></p>
+              </div>
+              <div>
+                <h3><u>Insurance</u></h3>
+                   <p></p>
+                   <a href="{{post.insurance.url}}" class="mb-3 d-block img-a img-thumbnail" download><img src="{{post.insurance.url}}" alt="Image" class="img-fluid rounded"></a>
+              </div>
+              <div>
+                <h3><u>Pollution</u></h3>
+                <p></p>
+                   <a href="{{post.pollution.url}}" class="mb-3 d-block img-a img-thumbnail" download><img src="{{post.pollution.url}}" alt="Image" class="img-fluid rounded"></a>
+              </div>
+            </div>
+          </div>
+
+       </div>
+      </div>
+    </div>
+  
+  {% endfor %}
+
+
+{% endblock %}
